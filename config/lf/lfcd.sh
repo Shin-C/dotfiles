@@ -1,0 +1,1 @@
+/home/shinc/dotfiles/lf/lfcd.sh

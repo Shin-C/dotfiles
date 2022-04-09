@@ -1,0 +1,92 @@
+\documentclass[12pt,letter]{article}
+\usepackage[comma]{natbib}
+\usepackage[onehalfspacing]{setspace}
+\usepackage[vmargin={2.5cm,2.5cm},hmargin={2.5cm,2.5cm}]{geometry}
+\usepackage{dcolumn,times}
+
+%---------------------------------
+% Loads my package, which already includes (among others)
+%   pifont, xspace, comment, amsmath, amssymb, booktabs, theorem, lscape,
+%   graphicx, epsfig, caption, epsfig, ifpdf, longtable
+%---------------------------------
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Preamble (definitions) 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Definition for the column type ".", where numbers are centered around "."
+% e.g. d{4.2} sets 4 spaces before the decimal point and 2 after it
+\newcolumntype{d}[1]{D{.}{.}{#1}}
+
+% shortcut for centering columns in the dcolumn package
+\newcommand{\mc}{\multicolumn{1}{c}} 
+
+% Use roman numbers
+\renewcommand{\thesection}{\Roman{section}}
+\renewcommand{\thesubsection}{\Alph{subsection}}
+\renewcommand{\thetable}{\Roman{table}}
+
+% Theorem like environments
+\newtheorem{remark}{Remark}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proof}{Proof}
+
+% Abstract customization 
+\renewcommand{\abstractname}{\textsc{ABSTRACT}}
+
+% Caption Customization
+% The centerfirst argument will center the first line and justify the rest. As
+% a result, a short description of the table can be added as a first sentence
+\captionsetup{labelfont={sf,bf}, justification=centerfirst}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   Spaces
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% This controls the space between bibtex items (default is around 1em,
+%%%% requires natbib)
+%\setlength{\bibsep}{0.69em}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Front matter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{<++>}<++>
+
+\author{<++>}<++>
+
+\date{<++>}<++>
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%   Begin Document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\maketitle
+
+<++>
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Bibliography
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\pagebreak \bibliographystyle{chicago}
+%\bibliography{JFE,JF,QJE,RFE,AER,JPE,WP,Other,OtherJournal,Econometrica,JFR,JB}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Tables and Graphs
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\end{document}

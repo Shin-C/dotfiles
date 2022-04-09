@@ -1,0 +1,16 @@
+#!/usr/bin/zsh
+#tmux new-session -d 'nvim'
+#tmux split-window -v -p 30 'ipython'
+#tmux -2 attach-session -d
+# change directory to python directory
+#cd /run/media/shinc/8C36A64636A6315E/PycharmProjects
+cd "$(dirname "$0" pwd)"
+#  select-pane -t 1 -T scripts \; \
+#  select-pane -t 2 -T ipython \; \
+#  send-keys 'nvim /run/media/shinc/8C36A64636A6315E/PycharmProjects/.' C-m \; \
+# initiate vim and ipython
+tmux new-session\; \
+  send-keys 'nvim .' C-m \; \
+  split-window -v -p 30 'ipython'\; \
+  select-pane -t 1 \; \
+	

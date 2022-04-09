@@ -1,0 +1,375 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Beamer Presentation
+% LaTeX Template
+% Version 1.0 (10/11/12)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+
+\documentclass{beamer}
+
+\mode<presentation> {
+
+% The Beamer class comes with a number of default slide themes
+% which change the colors and layouts of slides. Below this is a list
+% of all the themes, uncomment each in turn to see what they look like.
+
+%\usetheme{default}
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla}
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{Dresden}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+
+% As well as themes, the Beamer class has a number of color themes
+% for any slide theme. Uncomment each of these in turn to see how it
+% changes the colors of your current slide theme.
+
+%\usecolortheme{albatross}
+%\usecolortheme{beaver}
+%\usecolortheme{beetle}
+%\usecolortheme{crane}
+%\usecolortheme{dolphin}
+%\usecolortheme{dove}
+%\usecolortheme{fly}
+%\usecolortheme{lily}
+%\usecolortheme{orchid}
+%\usecolortheme{rose}
+%\usecolortheme{seagull}
+%\usecolortheme{seahorse}
+%\usecolortheme{whale}
+%\usecolortheme{wolverine}
+
+%\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
+%\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
+
+%\setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
+}
+\bibliographystyle{./apa} 
+\usepackage{hyperref}
+\usepackage[round,longnamesfirst]{natbib} 
+\usepackage{adjustbox}
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\usepackage{caption}
+\captionsetup{font=tiny}
+\usepackage{mathtools}
+%\usepackage{wrapfig}
+\setbeamercovered{transparent}
+%\usepackage{minipage}
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title[keywords]{title
+} % The short title appears at the bottom of every slide, the full title is only on the title page
+\subtitle{subtitle}
+\author{authors} % Your name
+
+\institute[institution] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{presented by Shin (Jiayuan) Chen\\
+
+	School of Finance\\
+	UNSW Business School\\ \\ % Your institution for the title page
+\medskip
+	\begin{figure}
+		\centering
+		\begin{subfigure}{\textwidth}
+			\centering
+			\includegraphics[height=0.6in]{unsw.png}
+		\end{subfigure}%
+		
+	\end{figure}}
+\date{\today} % Date, can be changed to a custom date
+
+\begin{document}
+
+\begin{frame}
+\titlepage % Print the title page as the first slide
+\end{frame}
+
+\begin{frame}
+\frametitle{Overview} % Table of contents slide, comment this block out to remove it
+\tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+[
+  currentsection,
+  sectionstyle=show,
+  subsectionstyle=show,
+  subsubsectionstyle=hide
+]
+\end{frame}
+
+%---------------------------------------------------------------------------------------
+%	PRESENTATION SLIDES
+%----------------------------------------------------------------------------------------
+
+%------------------------------------------------
+\section{First Section} % Sections can be created in order to organize your presentation into discrete blocks, all sections and subsections are automatically printed in the table of contents as an overview of the talk
+%------------------------------------------------
+\subsection{First subsection}
+
+\begin{frame}
+	\frametitle{Frame title}
+	Text for the first slides ...
+\end{frame}
+
+
+
+%------------------------------------------------
+\subsection{Second subsection}
+\begin{frame}
+	\frametitle{Frame title}
+	\begin{block}{Definition: Something}
+	Something is defined as something
+\end{block}
+\begin{itemize}
+	\item[1] Why something is important
+	\item[2] What make something important
+\end{itemize}
+\vspace{2mm}
+
+\end{frame}
+
+%------------------------------------------------
+\subsection{Third subsection}
+\begin{frame}
+	\frametitle{Frame title}
+
+\centering \includegraphics[width = 0.6\textwidth]{figure1.png}
+\end{frame}
+%------------------------------------------------
+\begin{frame}
+	\frametitle{Frame title}
+\end{frame}
+
+
+%------------------------------------------------
+\section{Second Section}
+\subsection{Identification Strategy}
+	\frametitle{Identification Strategy}
+	\textbf{Regression Specification}:\\
+	\vspace{2mm}
+	\begin{equation}
+Y_{i,t} = \beta_0 + \beta_1 1_{[treatment]}_{i} \times 1_{[post]}_{t} + \lambda X_{i,t} + \epsilon_{i,t}
+\end{equation}
+\small{All standard errors are clustered by date and stock.}\\
+
+\vspace{4mm}
+\textbf{Controls}:\\
+\begin{itemize}
+	\item[1] Control 1 and control 2
+	\item[2] Stock fixed effects and day fixed effects
+\end{itemize}
+\vspace{4mm}
+
+\textbf{Interpretation of $\beta_1$}: 
+\begin{itemize}
+	\item the average changes in the dependent variable that occur after
+	the event for treatment stocks relative to control stocks.\\
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------
+\subsection{Data}
+\begin{frame}
+	\frametitle{Data}
+	Our sample contains n stocks from data a to date b\\
+	\vspace{2mm}
+	\begin{itemize}
+		\item dataset 1
+			\begin{itemize}
+				\item variable 1
+				\item variable 2
+			\end{itemize}
+		\item dataset 2
+			\begin{itemize}
+				\item variable 3
+				\item variable 4
+				\item variable 5
+			\end{itemize}
+	\end{itemize}
+\end{frame}
+
+
+
+%------------------------------------------------
+\section{Results}
+\subsection{Results structure}
+  \begin{frame}
+    \frametitle{Table of Contents}
+     \tableofcontents
+  [
+  currentsection,
+  sectionstyle=show/hide,
+  subsectionstyle=show/shaded/hide,
+  subsubsectionstyle=show/show/shaded
+]
+\end{frame}
+
+%------------------------------------------------
+\subsubsection{1.1 First results}
+\begin{frame}
+\frametitle{Results: first results}
+\begin{minipage}{0.52\textwidth}
+\includegraphics[width = \textwidth]{table1.png}\\
+\end{minipage}
+\begin{minipage}[c]{0.43\textwidth}
+\includegraphics[width = \textwidth]{table2.png}\\
+\includegraphics[width = \textwidth]{table3.png}\\
+\end{minipage}
+\textbf{Interpretation}: the coefficient is positive and significant.\\
+
+\end{frame}
+
+%------------------------------------------------
+\subsubsection{1.2 Second results}
+\begin{frame}
+	\frametitle{Results: second results}
+	
+	\begin{minipage}{0.63\textwidth}
+		\includegraphics[width = \textwidth]{table4.png}\\
+\end{minipage}
+\begin{minipage}[c]{0.35\textwidth}
+	\raggedright
+	A = B - c\\
+	\small{where}:
+	\begin{equation*}
+		\resizebox{.9\hsize}{!}{
+		B = \begin{cases}
+			\text{EBO} &\text{for buyer-initiated trades}\\
+		\text{EBB} &\text{for seller-initiated trades}\\
+\end{cases}}
+	\end{equation*}	
+	RelA = A/Price*10000\\
+	\vspace{4mm}
+
+\end{minipage}
+\begin{itemize}
+	\item Explanation 1
+	\item Explanation 2
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------
+\subsection{Second part of results}
+ \begin{frame}
+    \frametitle{Table of Contents}
+     \tableofcontents
+  [
+  currentsection,
+  sectionstyle=show/hide,
+  subsectionstyle=show/shaded/hide,
+  subsubsectionstyle=show/show/shaded
+]
+\end{frame}
+
+%------------------------------------------------
+\subsubsection{2.1 First results}
+\begin{frame}
+	\frametitle{Results: First results in second part}
+	\centering	\includegraphics[width = 0.7\textwidth]{table5.png}\\
+	\begin{itemize}
+		\item Interpretation
+		\item Contradiction
+
+	\end{itemize}
+
+\end{frame}
+
+
+%------------------------------------------------
+\subsubsection{2.2 Second results}
+\begin{frame}
+	\frametitle{Results: Second results in second part}
+	\centering	\includegraphics[width = 0.7\textwidth]{table6.png}\\
+	\begin{itemize}
+		\item Interpretation
+		\item Why this results
+			$\xrightarrow[]{}$ If this results, we expect the next
+			result
+	\end{itemize}
+\end{frame}
+
+%------------------------------------------------
+\subsubsection{2.3 Third results}
+\begin{frame}
+	\frametitle{Results: Third results in second part}
+	%\begin{minipage}{0.35\textwidth}
+	\centering \includegraphics[width = 0.65\textwidth]{table7.png}\\
+	%\end{minipage}
+	%\begin{minipage}{0.62\textwidth}
+	\begin{itemize}
+		\item Explanation
+		\item consolidation
+%		\item Conclusion
+	\end{itemize}
+	%\end{minipage}
+\end{frame}
+
+
+
+\begin{frame}
+	\frametitle{Concluding Remark}
+	In summary, we find that the EVENT A leads to:
+	\begin{itemize}
+		\item Result 1
+		\item Result 2
+		\item Result 3
+		\item Result 4
+	\end{itemize}
+	\vspace{4mm}
+	Future research and question unresolved
+	\begin{itemize}
+		\item Problem 1
+		\item Problem 2
+	\end{itemize}
+\end{frame}
+
+% \begin{frame}[allowframebreaks]
+% \frametitle{References}
+% \bibliography{./citation.bib}
+
+% \end{frame}
+
+%----------------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Appendix}
+\centering \includegraphics[width = 0.7\textwidth]{a2.png}
+$$ \text{Welfare}_{i,t} = \text{Trddvol within}_{i,t} * \text{PI}_{i,t}$$
+$$ \text{RelWelfare}_{i,t} = \frac{\text{Trddvol within}_{i,t} * \text{PI}_{i,t}}{\text{Total dollar volume}}  $$
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
+-
