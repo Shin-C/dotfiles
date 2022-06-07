@@ -13,10 +13,10 @@ export EDITOR="$VISUAL"
 
 
 # python startup
-export PYTHONSTARTUP=/home/shinc/dotfiles/pythonstartup/startup.py
+export PYTHONSTARTUP=~/dotfiles/pythonstartup/startup.py
 
 #dot file dir
-export dots='/home/shinc/dotfiles'
+export dots='~/dotfiles'
 
 # D drive
 export dd='/run/media/shinc/8C36A64636A6315E'

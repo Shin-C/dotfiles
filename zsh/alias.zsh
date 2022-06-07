@@ -12,20 +12,25 @@ alias vmap='vim ~/dotfiles/vim/maps.vim'
 alias zshrc='nvim ~/.zshrc'
 alias i3rc='nvim ~/.i3/config'
 alias mshow='xrandr --output HDMI-3 --auto --left-of HDMI-1-1 --auto'
-alias zsource='source ~/dotfiles/zsh/.zshrc'
+alias zs='source ~/dotfiles/zsh/.zshrc'
 alias zmap='nvim ~/dotfiles/zsh/alias.zsh'
 alias zexport='nvim ~/dotfiles/zsh/export.zsh'
 alias startup='sudo nvim /usr/bin/python3.9/startup.py'
 alias tmuxrc='nvim ~/dotfiles/.tmux.conf'
 alias dots='cd ~/dotfiles'
-alias f='nvim $(fzf)'
+# alias f='nvim $(fzf)'
 alias stup='stup.sh'
+alias h='history -i'
+alias stata='/usr/local/xstata-mp'
+alias cl='clipcopy'
+alias vpn='/opt/cisco/anyconnect/bin/vpnui'
 # LFCD="/path/to/lfcd.sh"
 # if [ -f "$LFCD" ]; then
 # 	source "$LFCD"
 # fi
 
-
+ss(){du -a ~/dotfiles/* ~/.config/* |awk '{print $2}'|fzf|xargs -r $EDITOR;}
+vf(){fzf| xargs -r -I % $EDITOR %;}
 # Use vim keys in tab complete menu:
 bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'k' vi-up-line-or-history

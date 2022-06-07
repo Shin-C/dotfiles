@@ -213,9 +213,10 @@ map cdd cd /run/media/shinc/8C36A64636A6315E
 
 #map p paste
 map gd cd /run/media/shinc/D
-map gx cd /home/shinc/Dropbox
-map gh cd /home/shinc/
-map ge cd /home/shinc/Desktop/example/
+map gx cd ~/Dropbox
+map gt cd ~/Dropbox/ticksizeregime/
+map gh cd ~/
+map ge cd ~/Desktop/example/
 map gp cd /run/media/shinc/D/PycharmProjects/ticksizeregime/
 map m
 

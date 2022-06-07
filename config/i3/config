@@ -56,7 +56,9 @@ bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 # bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
 
 # Start Applications
-bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
+# bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
+bindsym $mod+d exec --no-startup-id termite -t 'fzf_dmenu' -e 'i3-dmenu-desktop --dmenu=fzf'
+for_window [title="fzf_dmenu"] floating enable
 bindsym Ctrl+1 exec firefox
 bindsym Ctrl+2 exec pycharm
 bindsym Ctrl+3 exec thunderbird
@@ -313,7 +315,7 @@ exec --no-startup-id clipit
 # exec_always --no-startup-id sbxkb
 exec --no-startup-id start_conky_maia
 # exec --no-startup-id start_conky_green
-exec --no-startup-id xautolock -time 10 -locker blurlock
+exec --no-startup-id xautolock -time 20 -locker blurlock
 # exec --no-startup-id xidlehook --timer 30 "brightnessctl set 600" "brightnessctl set 1500" exec --no-startup-id xidlehook --not-when-audio --timer 60 "betterlockscreen -l dim"
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
@@ -353,7 +355,7 @@ set_from_resource $term_color15    color15
 bar {
 	# i3bar_command i3bar
 	# status_command i3status
-    status_command /home/shinc/.config/bumblebee-status/bumblebee-status \
+    status_command ~/.config/bumblebee-status/bumblebee-status \
     -m cpu memory disk datetime \
     -p datetime.format="%d %b, %Y - %H:%M:%S" \
     -t gruvbox-powerline 
