@@ -28,9 +28,10 @@ alias vpn='/opt/cisco/anyconnect/bin/vpnui'
 # if [ -f "$LFCD" ]; then
 # 	source "$LFCD"
 # fi
-
+# some user-defined functions
 ss(){du -a ~/dotfiles/* ~/.config/* |awk '{print $2}'|fzf|xargs -r $EDITOR;}
 vf(){fzf| xargs -r -I % $EDITOR %;}
+
 # Use vim keys in tab complete menu:
 bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
