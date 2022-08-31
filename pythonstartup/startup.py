@@ -631,6 +631,47 @@ def _set_digit(digit):
     pd.set_option('display.max_colwidth', 1000) 
     pd.set_option('display.float_format', lambda x: '%.3f' % x)
 
+
+def pdset(opt, value):
+    '''
+    Quick way to set pandas option
+    :param opt: pandas option
+    :param value: optioin value
+    :return: none
+    '''
+    opt = opt.lower()
+
+    if opt == 'mc':
+        pd.set_option('display.max_column', value)
+        print (f'pd.set_option(display.max_column, {value})')
+    elif opt == 'mr':
+        pd.set_option('display.max_rows', value)
+        print (f'pd.set_option(display.max_rows, {value})')
+    elif opt == 'cw':
+        pd.set_option('display.max_colwidth', value)
+        print (f'pd.set_option(display.max_colwidth, {value})')
+    elif opt == 'w':
+        pd.set_option('display.width', value)
+        print (f'pd.set_option(display.width, {value})')
+    elif opt == 'd':
+        pd.set_option('display.float_format', lambda x: f'%.{value}f' % x)
+        print (f'pd.set_option(display.float_format, lambda x: %.{value}f % x)')
+    else:
+        raise KeyError('No matching option, please check the option keywords')
+
+import inspect
+
+def _inspect_(func, limit = 1000):
+    '''
+    Inspect function or module
+    :param func: function want to inspect
+    :param limit: the number of character want to view
+    :return: None
+    '''
+    lines = inspect.getsource(func)
+    print(lines[0:limit] + '...')
+
+
 print('=' * 70)
 print('User: Jiayuan Chen (jiayuanchen@outlook.com)')
 print('=' * 70)
