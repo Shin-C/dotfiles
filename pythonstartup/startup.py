@@ -632,13 +632,21 @@ def _set_digit(digit):
     pd.set_option('display.float_format', lambda x: '%.3f' % x)
 
 
-def pdset(opt, value):
+def pdset(opt = '', value = -1):
     '''
     Quick way to set pandas option
     :param opt: pandas option
     :param value: optioin value
     :return: none
     '''
+    # default setting
+    if opt == '' and value == -1:
+        pd.set_option('display.max_column', 15)
+        pd.set_option('display.max_rows', 50)
+        pd.set_option('display.max_colwidth', 100)
+        pd.set_option('display.width', 300)
+        pd.set_option('display.float_format', lambda x: '%.4f' % x)
+    
     opt = opt.lower()
 
     if opt == 'mc':
