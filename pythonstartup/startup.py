@@ -503,6 +503,9 @@ def rcsv(path, **kwargs):
 def rexcel(path, **kwargs):
     return pd.read_excel(path, **kwargs)
 
+def rpq(path, **kwargs):
+    return pd.read_parquet(path, **kwargs)
+
 
 def timer(f):
     @wraps(f)
