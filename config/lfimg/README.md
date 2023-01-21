@@ -30,6 +30,12 @@ Besides lf and Überzug you will need to install the following packages:
 * transmission (optional - for .torrent files)
 * mcomix (optional - for .cbz and .cbr files)
 ## Installation
+yes | yay -S ffmpegthumbnailer imagemagick poppler epub-thumbnailer-git wkhtmltopdf
+
+
+## git from dots
+rsync -r ~/dotfiles/config/lfimg ~/.config/lfimg
+
 
 In the project directory you can run the following command:
 
