@@ -25,6 +25,8 @@ alias stup='stup.sh'
 # 	source "$LFCD"
 # fi
 
+ss(){du -a ~/dotfiles/* ~/.config/* |awk '{print $2}'|fzf|xargs -r $EDITOR;}
+vf(){fzf| xargs -r -I % $EDITOR %;}
 
 # Use vim keys in tab complete menu:
 bindkey -M menuselect 'h' vi-backward-char
