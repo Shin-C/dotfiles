@@ -639,8 +639,12 @@ def pdset(opt = 'default', value = -1):
     '''
     Quick way to set pandas option
     :param opt: pandas option
-    :param value: optioin value
-    :return: none
+    'mc': pd.set_option('display.max_column', value)
+    'mr': pd.set_option('display.max_rows', value)
+    'cw': pd.set_option('display.max_colwidth', value)
+    'w': pd.set_option('display.width', value)
+    'd': pd.set_option('display.float_format', lambda x: f'%.{value}f' % x)
+    :param value: optioin value none
     '''
     opt = opt.lower()
 
