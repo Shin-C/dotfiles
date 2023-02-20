@@ -9,11 +9,11 @@ PYTHONUSERDIR approppriately, too::
     export PYTHONUSERDIR=/path/to/dir
 """
 # python-startup.py
-# Author: Nathan Gray, based on interactive.py by Robin Friedrich and an 
+# Author: Nathan Gray, based on interactive.py by Robin Friedrich and an
 #           evil innate desire to customize things.
 # E-Mail: n8gray@caltech.edu
 #
-# Version: 0.6 
+# Version: 0.6
 
 # These modules are always nice to have in the namespace
 
@@ -58,11 +58,11 @@ from functools import wraps
 from datetime import datetime
 
 # environment settings:
-pd.set_option('display.max_column', None)
-pd.set_option('display.max_rows', 100)
-pd.set_option('display.max_colwidth', 1000)
-pd.set_option('display.width', 1000)
-# pd.set_option('display.float_format', lambda x: '%.2f' % x)
+#pd.set_option('display.max_column', None)
+#pd.set_option('display.max_rows', 100)
+#pd.set_option('display.max_colwidth', 1000)
+#pd.set_option('display.width', 1000)
+#pd.set_option('display.float_format', lambda x: '%.2f' % x)
 
 def profile(fnc):
     """A decorator that uses cProfile to profile a function"""
@@ -503,9 +503,6 @@ def rcsv(path, **kwargs):
 def rexcel(path, **kwargs):
     return pd.read_excel(path, **kwargs)
 
-def rpq(path, **kwargs):
-    return pd.read_parquet(path, **kwargs)
-
 
 def timer(f):
     @wraps(f)
@@ -631,8 +628,42 @@ def findcol(df, word, ignore=True):
 
 def _set_digit(digit):
     pd.set_option('display.max_column', None)
-    pd.set_option('display.max_colwidth', 1000) 
+    pd.set_option('display.max_colwidth', 1000)
     pd.set_option('display.float_format', lambda x: '%.3f' % x)
+
+
+
+def winsorize_with_pandas(s, limits):
+    """
+    s : pd.Series
+        Series to winsorize
+    limits : tuple of float
+        Tuple of the percentages to cut on each side of the array,
+        with respect to the number of unmasked data, as floats between 0. and 1
+    """
+    return s.clip(lower=s.quantile(limits[0], interpolation='lower'),
+                  upper=s.quantile(1 - limits[1], interpolation='higher'))
+
+
+def mwinsorize(df, cols, limits=[0.01, 0.01], return_raw=False):
+    '''
+    winsorize using pandas
+    :param df:
+    :param col:
+    :param limits:
+    :return:
+    '''
+
+    if return_raw:
+        raw = df.copy()
+
+    for col in cols:
+        df[col] = winsorize_with_pandas(df[col], limits)
+
+    if return_raw:
+        return df, raw
+    else:
+        return df
 
 
 def pdset(opt = 'default', value = -1):
@@ -644,7 +675,7 @@ def pdset(opt = 'default', value = -1):
     'cw': pd.set_option('display.max_colwidth', value)
     'w': pd.set_option('display.width', value)
     'd': pd.set_option('display.float_format', lambda x: f'%.{value}f' % x)
-    :param value: optioin value none
+    :param value: optioin value
     '''
     opt = opt.lower()
 
@@ -655,6 +686,13 @@ def pdset(opt = 'default', value = -1):
         pd.set_option('display.max_colwidth', 100)
         pd.set_option('display.width', 300)
         pd.set_option('display.float_format', lambda x: '%.4f' % x)
+    elif opt == 'l' and value == -1:
+        pd.set_option('display.max_column', 150)
+        pd.set_option('display.max_rows', 500)
+        pd.set_option('display.max_colwidth', 500)
+        pd.set_option('display.width', 1000)
+        pd.set_option('display.float_format', lambda x: '%.4f' % x)
+
 
     else:
         if opt == 'mc':
@@ -674,6 +712,7 @@ def pdset(opt = 'default', value = -1):
             print (f'pd.set_option(display.float_format, lambda x: %.{value}f % x)')
         else:
             raise KeyError('No matching option, please check the option keywords')
+pdset()
 
 import inspect
 
